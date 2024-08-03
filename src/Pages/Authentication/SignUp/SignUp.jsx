@@ -76,7 +76,7 @@ const SignUp = () => {
             const user = {name,email,image};
             console.log(user);
             if (data.success) {
-              fetch("http://localhost:5000/users", {
+              fetch("https://todo-list-server-neon-six.vercel.app/users", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",

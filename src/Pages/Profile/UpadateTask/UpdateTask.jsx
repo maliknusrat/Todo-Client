@@ -8,7 +8,7 @@ const UpdateTask = ({ id }) => {
     const [info,setInfo] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleList/${id}`)
+        fetch(`https://todo-list-server-neon-six.vercel.app/singleList/${id}`)
           .then((res) => res.json())
           .then((data) => {
             setInfo(data);
@@ -28,7 +28,7 @@ const UpdateTask = ({ id }) => {
         const status = "Pending"
         const updatedlist = {title, date, message, priorty,status};
     
-        fetch(`http://localhost:5000/updatelist/${id}`, {
+        fetch(`https://todo-list-server-neon-six.vercel.app/updatelist/${id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

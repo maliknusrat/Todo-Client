@@ -8,7 +8,7 @@ const UserProfile = () => {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userInfo/${user?.email}`)
+    fetch(`https://todo-list-server-neon-six.vercel.app/userInfo/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setInfo(data);

@@ -31,7 +31,7 @@ const MyToDo = () => {
   const [id, setId] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getList?email=${user?.email}`)
+    fetch(`https://todo-list-server-neon-six.vercel.app/getList?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setInfo(data.lists);
@@ -44,7 +44,7 @@ const MyToDo = () => {
   }, [user?.email]);
 
   const handleStatus = (id) => {
-    fetch(`http://localhost:5000/updateStatus/${id}`, {
+    fetch(`https://todo-list-server-neon-six.vercel.app/updateStatus/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -74,7 +74,7 @@ const MyToDo = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log("delete confirm");
-        fetch(`http://localhost:5000/deleteList/${id}`, {
+        fetch(`https://todo-list-server-neon-six.vercel.app/deleteList/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

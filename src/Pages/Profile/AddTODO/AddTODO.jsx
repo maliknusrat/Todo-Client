@@ -20,7 +20,7 @@ const AddTODO = () => {
     const status = "Pending"
     const list = { name, email, title, date, message, priorty,status};
 
-    fetch("http://localhost:5000/lists", {
+    fetch("https://todo-list-server-neon-six.vercel.app/lists", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

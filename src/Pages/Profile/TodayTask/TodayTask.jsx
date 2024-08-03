@@ -6,7 +6,7 @@ const TodayTask = () => {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/todayGetList?email=${user?.email}`)
+    fetch(`https://todo-list-server-neon-six.vercel.app/todayGetList?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setInfo(data.findDate);
